@@ -14,7 +14,24 @@ export default class LaunchScreen extends Component {
       height: null
     }
   }
-  componentWillUpdate() {
+  componentWillMount() {
+    this._panResponder = PanResponder.create({
+      onMoveShouldSetResponderCapture: () => true,
+      onMoveShouldSetPanResponderCapture: () => true,
+      onPanResponderGrant: (e, {x0, y0}) => {
+        // start gesture
+      },
+
+      onPanResponderMove: (e, {dx, dy}) => {
+          // gesture progress
+      },
+
+      onPanResponderRelease: (ev, {vx, vy}) => {
+          // gesture complete 
+      }
+    });
+  }
+  componentWillUnmount() {
     clearInterval(this.timer);
   }
   refreshPic = () =>{
@@ -46,6 +63,7 @@ export default class LaunchScreen extends Component {
       return (    
         <Screen onLayout={this.onLayout}>
           <Camera style={{flex: 1}}
+                  captureQuality={Camera.constants.CaptureQuality['720p']}
                   ref={cam => this.camera = cam}
                   aspect={Camera.constants.Aspect.fill}>
             <Surface style={{width, height}}>
