@@ -15,8 +15,7 @@ export default class LaunchScreen extends Component {
   onLayout(ev){
     const {width, height} = ev.nativeEvent.layout;
     this.setState({
-      width,
-      height
+      width,  height
     });
   }  
   render () {
