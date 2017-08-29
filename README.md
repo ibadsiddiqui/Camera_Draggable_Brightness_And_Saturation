@@ -5,7 +5,7 @@
 * Standard compliant React Native App Utilizing [Ignite](https://github.com/infinitered/ignite)
 * Uses [React-Native-Camera] (https://github.com/lwansbrough/react-native-camera)
 * [Shoutem/UI kit](https://github.com/shoutem/ui)
-
+* WebGl- that is [gl-react-native](https://github.com/gre/gl-react-native-v2) and [gl-react](https://github.com/gre/gl-react-v2)
 #### The camera can be used by the using the following settings:
 ```
 1. if on react-native < 0.40: npm i react-native-camera@0.4
