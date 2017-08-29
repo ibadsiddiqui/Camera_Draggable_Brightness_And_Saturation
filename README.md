@@ -1,8 +1,50 @@
 #  CameraDraggableBrightnessAndSaturation
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](http://standardjs.com/)
 
-* Standard compliant React Native App Utilizing [Ignite](https://github.com/infinitered/ignite)
 
+* Standard compliant React Native App Utilizing [Ignite](https://github.com/infinitered/ignite)
+* Uses [React-Native-Camera] (https://github.com/lwansbrough/react-native-camera)
+* [Shoutem/UI kit](https://github.com/shoutem/ui)
+
+#### The camera can be used by the using the following settings:
+```
+1. if on react-native < 0.40: npm i react-native-camera@0.4
+2. if on react-native >= 0.40 npm i react-native-camera@0.6
+```
+To enable video recording feature you have to add the following code to the ``` AndroidManifest.xml ```:
+```
+<uses-permission android:name="android.permission.RECORD_AUDIO"/>
+<uses-permission android:name="android.permission.RECORD_VIDEO"/>
+<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+```
+
+### Getting started
+#### Mostly automatic install with react-native
+```
+1. npm install react-native-camera --save
+2. react-native link react-native-camera
+``` 
+##### Android
+1. npm install react-native-camera --save
+2. Open up `android/app/src/main/java/[...]/MainApplication.java.
+
+  * Add ``` import com.lwansbrough.RCTCamera.RCTCameraPackage;``` to the imports at the top of the file
+  * Add ```new RCTCameraPackage()``` to the list returned by the ```getPackages()``` method. Add a comma to the previous item if there's already something there
+3. Append the following lines to android/settings.gradle:
+  ```
+  include ':react-native-camera'
+  project(':react-native-camera').projectDir = new File(rootProject.projectDir, 	'../node_modules/react-native-camera/android')
+  ```
+4. Insert the following lines inside the dependencies block in android/app/build.gradle:
+```compile project(':react-native-camera')```
+5. Declare the permissions in your Android Manifest (required for video recording feature)
+```
+<uses-permission android:name="android.permission.RECORD_AUDIO"/>
+<uses-permission android:name="android.permission.RECORD_VIDEO"/>
+<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+```
 ## :arrow_up: How to Setup
 
 **Step 1:** git clone this repo:
