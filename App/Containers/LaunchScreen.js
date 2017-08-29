@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {Screen} from '@shoutem/ui'
 import Camera from 'react-native-camera';
-import { Surface } from "gl-react-native";
+import { Surface } from "gl-react";
 // Styles
 import styles from './Styles/LaunchScreenStyles'
 
