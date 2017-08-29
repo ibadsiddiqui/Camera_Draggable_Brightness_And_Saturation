@@ -25,6 +25,8 @@
     "@shoutem/ui": "shoutem/ui#242/head",
     "apisauce": "^0.14.0",
     "format-json": "^1.0.3",
+    "gl-react": "^2.2.10",
+    "gl-react-native": "^2.47.0",
     "lodash": "^4.17.2",
     "prop-types": "^15.5.10",
     "querystringify": "0.0.4",

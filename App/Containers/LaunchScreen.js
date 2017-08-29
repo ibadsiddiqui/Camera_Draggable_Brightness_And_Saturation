@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {Screen} from '@shoutem/ui'
 import Camera from 'react-native-camera';
+import { Surface } from "gl-react-native";
 // Styles
 import styles from './Styles/LaunchScreenStyles'
 
@@ -26,6 +27,12 @@ export default class LaunchScreen extends Component {
         <Camera style={{flex: 1}}
                 ref={cam => this.camera = cam}
                 aspect={Camera.constants.Aspect.fill}>
+          <Surface style={{width, height}}>
+                <Saturate {...filter}>
+                  {{uri: 'http://i.imgur.com/uTp9Xfr.jpg'}}
+                </Saturate>
+                
+              </Surface>
         </Camera>  
 
       </Screen>
