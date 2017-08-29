@@ -12,7 +12,7 @@ export default class LaunchScreen extends Component {
       height: null
     }
   }
-  onLayout(ev){
+  onLayout= (ev) =>{
     const {width, height} = ev.nativeEvent.layout;
     this.setState({
       width,  height
