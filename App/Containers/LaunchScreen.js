@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 import { Screen, Button, Text } from '@shoutem/ui';
 import Camera from 'react-native-camera';
-import { Surface } from "gl-react";
 import { PanResponder } from 'react-native';
+
+//webgl
+import { Surface } from "gl-react";
+// d3.js library
 import { scaleLinear } from 'd3-scale';
 
+// saturation 
 import Saturate from './Saturation';
 
 export default class LaunchScreen extends Component {
@@ -27,6 +31,7 @@ export default class LaunchScreen extends Component {
       this.start();
     }
 
+    // refreshes pic 
     refreshPic = () => {
         this.camera
             .capture({
@@ -39,6 +44,7 @@ export default class LaunchScreen extends Component {
             .catch(err => console.error(err));
     }
 
+    // start the refresh timer
     start() {
         this.timer = setInterval(() => this.refreshPic(),
                                  80000);
